@@ -8,6 +8,7 @@ import net.savagedev.tpa.plugin.commands.TpDenyCommand;
 import net.savagedev.tpa.plugin.commands.TpHereCommand;
 import net.savagedev.tpa.plugin.commands.TpaCommand;
 import net.savagedev.tpa.plugin.commands.TpaHereCommand;
+import net.savagedev.tpa.plugin.commands.TpGuiCommand;
 import net.savagedev.tpa.plugin.commands.admin.BungeeTpAdminCommand;
 import net.savagedev.tpa.plugin.commands.admin.ReloadCommand;
 import net.savagedev.tpa.plugin.commands.admin.ServerInfoCommand;
@@ -122,6 +123,7 @@ public class BungeeTpPlugin {
         this.platform.registerCommand(new TpDenyAllCommand(this), "tpdenyall", "bungeetp.deny.all");
         this.platform.registerCommand(new TpDenyCommand(this), "tpdeny", "bungeetp.deny");
         this.platform.registerCommand(new TpHereCommand(this), "tphere", "bungeetp.tphere", "s");
+        this.platform.registerCommand(new TpGuiCommand(this), "tpgui", "bungeetp.tpgui");
         // Putting this off until I have the time to write a more robust storage solution.
         // this.platform.registerCommand(new TpToggleCommand(), "tptoggle", "bungeetp.toggle");
     }

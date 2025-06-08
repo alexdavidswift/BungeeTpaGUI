@@ -4,6 +4,7 @@ import net.savagedev.tpa.bridge.messenger.BungeeTpBridgeMessenger;
 import net.savagedev.tpa.bridge.model.BungeeTpPlayer;
 import net.savagedev.tpa.common.messaging.ChannelConstants;
 import net.savagedev.tpa.common.messaging.messages.Message;
+import net.savagedev.tpa.common.messaging.messages.MessageOpenTeleportGui;
 import net.savagedev.tpa.spigot.BungeeTpSpigotPlugin;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.messaging.Messenger;
@@ -38,6 +39,16 @@ public class SpigotPluginMessenger extends BungeeTpBridgeMessenger<BungeeTpPlaye
     @Override
     public void onPluginMessageReceived(@Nonnull String channel, @Nonnull Player player, @Nonnull byte[] bytes) {
         super.handleIncomingMessage(null, channel, bytes);
+    }
+
+    @Override
+    public void handleIncomingMessage(Message message) {
+        if (message instanceof MessageOpenTeleportGui) {
+            MessageOpenTeleportGui gui = (MessageOpenTeleportGui) message;
+            this.plugin.openTeleportGui(gui.getRequester(), gui.getPlayers());
+            return;
+        }
+        super.handleIncomingMessage(message);
     }
 
     @Override

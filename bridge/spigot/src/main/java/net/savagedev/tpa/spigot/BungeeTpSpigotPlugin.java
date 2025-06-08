@@ -14,6 +14,8 @@ import net.savagedev.tpa.spigot.hook.vanish.SuperVanishPluginHook;
 import net.savagedev.tpa.spigot.listeners.ConnectionListener;
 import net.savagedev.tpa.spigot.messenger.SpigotPluginMessenger;
 import net.savagedev.tpa.spigot.model.SpigotPlayer;
+import net.savagedev.tpa.spigot.gui.TeleportGuiListener;
+import net.savagedev.tpa.spigot.gui.TeleportGuiManager;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
@@ -35,10 +37,13 @@ public class BungeeTpSpigotPlugin extends JavaPlugin implements BungeeTpBridgePl
 
     private AbstractVanishHook vanishProvider;
     private AbstractEconomyHook economyHook;
+    private TeleportGuiManager guiManager;
 
     @Override
     public void onEnable() {
+        this.guiManager = new TeleportGuiManager(this);
         this.getServer().getPluginManager().registerEvents(new ConnectionListener(this), this);
+        this.getServer().getPluginManager().registerEvents(new TeleportGuiListener(this.guiManager), this);
         this.plugin.enable();
 
         this.hookEconomy();
@@ -151,5 +156,12 @@ public class BungeeTpSpigotPlugin extends JavaPlugin implements BungeeTpBridgePl
     @Override
     public String getOfflineUsername(UUID uuid) {
         return this.getServer().getOfflinePlayer(uuid).getName();
+    }
+
+    public void openTeleportGui(UUID uuid, Map<UUID, String> players) {
+        Player player = this.getServer().getPlayer(uuid);
+        if (player != null) {
+            this.guiManager.openGui(player, players);
+        }
     }
 }

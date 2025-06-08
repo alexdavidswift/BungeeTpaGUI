@@ -19,6 +19,7 @@ import net.savagedev.tpa.common.messaging.messages.MessageEconomyResponse;
 import net.savagedev.tpa.common.messaging.messages.MessageEconomyWithdrawRequest;
 import net.savagedev.tpa.common.messaging.messages.MessageRequestTeleportCoords;
 import net.savagedev.tpa.common.messaging.messages.MessageRequestTeleportPlayer;
+import net.savagedev.tpa.common.messaging.messages.MessageOpenTeleportGui;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,6 +37,7 @@ public abstract class BungeeTpBridgeMessenger<T> extends AbstractMessenger<T> {
         DECODER_FUNCTIONS.put(MessageEconomyDepositRequest.class.getSimpleName(), MessageEconomyDepositRequest::deserialize);
         DECODER_FUNCTIONS.put(MessageBasicServerInfoRequest.class.getSimpleName(), MessageBasicServerInfoRequest::deserialize);
         DECODER_FUNCTIONS.put(MessageCurrencyFormatRequest.class.getSimpleName(), MessageCurrencyFormatRequest::deserialize);
+        DECODER_FUNCTIONS.put(MessageOpenTeleportGui.class.getSimpleName(), MessageOpenTeleportGui::deserialize);
     }
 
     private final BungeeTpBridgePlatform platform;

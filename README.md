@@ -21,6 +21,7 @@ This plugin brings a new dimension to teleportation, providing seamless and effi
 | `/tp <player>`        | -            | `bungeetp.tp`        | Teleport to another player                          |
 | `/tpahere <player>`   | -            | `bungeetp.tpahere`   | Request another player to teleport to your location |
 | `/tphere <player>`    | `/s <player>`| `bungeetp.tphere`    | Teleport another player to your location (alias: /s)|
+| `/tpgui`              | -            | `bungeetp.tpgui`     | Open a GUI listing online players for quick teleport |
 | `/tpaccept`           | -            | `bungeetp.accept`    | Accept a teleport request                           |
 | `/tpcancel`           | -            | `bungeetp.cancel`    | Cancel a teleport request                           |
 | `/tpdenyall`          | -            | `bungeetp.deny.all`  | Deny all pending teleport requests                  |

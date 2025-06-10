@@ -6,16 +6,15 @@ group = project.parent?.group!!
 version = project.parent?.version!!
 
 repositories {
-    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots")
-
-    maven("https://repo.essentialsx.net/snapshots/")
+    maven("https://repo.papermc.io/repository/maven-public/")
+    maven("https://repo.essentialsx.net/releases/")
     maven("https://jitpack.io")
 }
 
 dependencies {
-    compileOnly("org.spigotmc:spigot-api:1.20-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT")
 
-    compileOnly("net.essentialsx:EssentialsX:2.21.0-SNAPSHOT") {
+    compileOnly("net.essentialsx:EssentialsX:2.22.0") {
         exclude("io.papermc")
     }
     compileOnly("com.github.LeonMangler:SuperVanish:6.2.18-3")

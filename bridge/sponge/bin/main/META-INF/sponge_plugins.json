@@ -1,0 +1,26 @@
+{
+  "loader": {
+    "name": "java_plain",
+    "version": "1.0"
+  },
+  "license": "MIT",
+  "plugins": [
+    {
+      "id": "bungeetpasponge",
+      "entrypoint": "net.savagedev.tpa.sponge.BungeeTpSpongePlugin",
+      "name": "BungeeTpaSpongeBridge",
+      "description": "Teleport across a BungeeCord network.",
+      "version": "property \u0027version\u0027",
+      "branding": {},
+      "links": {},
+      "dependencies": [
+        {
+          "id": "spongeapi",
+          "version": "8.1.0",
+          "load-order": "after",
+          "optional": false
+        }
+      ]
+    }
+  ]
+}

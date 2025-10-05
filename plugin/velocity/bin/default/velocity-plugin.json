@@ -1,0 +1,1 @@
+{"id":"velocitytp","name":"VelocityTP","version":"1.0.4","description":"Teleport across a Velocity network.","url":"https://www.savagedev.net","authors":["SavageAvocado"],"dependencies":[],"main":"net.savagedev.tpa.velocity.BungeeTpVelocityPlugin"}
